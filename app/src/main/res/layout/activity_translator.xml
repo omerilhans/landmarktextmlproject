@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TranslatorActivity">
+
+    <ImageView
+        android:id="@+id/landmark_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/landmarks_bg"
+        android:textSize="30sp"
+        app:layout_constraintDimensionRatio="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/translator_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_button_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/landmark_image">
+
+        <EditText
+            android:id="@+id/transcription_text"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:autofillHints=""
+            android:background="@android:color/white"
+            android:ems="10"
+            android:focusedByDefault="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/translator_text"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Translator"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/translate_button"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text" />
+
+        <Button
+            android:id="@+id/translate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/border_button_2"
+            android:padding="@dimen/hiad_10_dp"
+            android:text="Translate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/translator_text"
+            app:layout_constraintStart_toStartOf="@+id/translator_text" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="10dp"
+            android:text="Detect Language"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="10dp"
+            android:text="French"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/translator_text"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:background="#80D8FF"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/translator_text" />
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text" />
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text"
+            app:layout_constraintTop_toTopOf="@+id/transcription_text" />
+
+        <View
+            android:id="@+id/view9"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            app:layout_constraintEnd_toEndOf="@+id/transcription_text"
+            app:layout_constraintStart_toStartOf="@+id/transcription_text"
+            app:layout_constraintTop_toBottomOf="@+id/transcription_text" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#D1D1D1"
+            app:layout_constraintBottom_toBottomOf="@+id/transcription_text"
+            app:layout_constraintEnd_toStartOf="@+id/transcription_text"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#D1D1D1"
+            app:layout_constraintBottom_toBottomOf="@+id/transcription_text"
+            app:layout_constraintStart_toEndOf="@+id/transcription_text"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#D1D1D1"
+            app:layout_constraintBottom_toBottomOf="@+id/translator_text"
+            app:layout_constraintStart_toEndOf="@+id/translator_text"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#D1D1D1"
+            app:layout_constraintBottom_toBottomOf="@+id/translator_text"
+            app:layout_constraintEnd_toStartOf="@+id/translator_text"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
