@@ -2,6 +2,7 @@ package com.huawei.landmarktextmlproject;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -53,6 +54,8 @@ public class LandmarkRecognizationActivity extends AppCompatActivity {
 
     private MLRemoteLandmarkAnalyzer analyzer;
 
+    private Bitmap mBitmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +71,10 @@ public class LandmarkRecognizationActivity extends AppCompatActivity {
 
         mainLayout = findViewById(R.id.landmark_main_layout);
 
+        mBitmap = MainActivity.Companion.getImageBitmap();
+
         Glide.with(this).asBitmap()
-                .load(MainActivity.Companion.getImageBitmap())
+                .load(mBitmap)
                 .apply(bitmapTransform(new BlurTransformation(22)))
                 .into((mImageView));
 
@@ -117,16 +122,18 @@ public class LandmarkRecognizationActivity extends AppCompatActivity {
     }
 
     private void analyzer() {
+
         MLRemoteLandmarkAnalyzerSetting settings = new MLRemoteLandmarkAnalyzerSetting.Factory()
                 .setLargestNumOfReturns(1)
                 .setPatternType(MLRemoteLandmarkAnalyzerSetting.STEADY_PATTERN)
                 .create();
+
         this.analyzer = MLAnalyzerFactory.getInstance()
                 .getRemoteLandmarkAnalyzer(settings);
         // Create an MLFrame by using android.graphics.Bitmap. Recommended image size: large than 640*640.
         //  Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.landmark_image);
-        if (MainActivity.Companion.getImageBitmap() != null) {
-            MLFrame mlFrame = new MLFrame.Creator().setBitmap(Objects.requireNonNull(MainActivity.Companion.getImageBitmap())).create();
+        if (mBitmap != null) {
+            MLFrame mlFrame = new MLFrame.Creator().setBitmap(Objects.requireNonNull(mBitmap)).create();
             Task<List<MLRemoteLandmark>> task = this.analyzer.asyncAnalyseFrame(mlFrame);
             task.addOnSuccessListener(new OnSuccessListener<List<MLRemoteLandmark>>() {
                 @Override
@@ -151,7 +158,7 @@ public class LandmarkRecognizationActivity extends AppCompatActivity {
 
     private void displaySuccess(MLRemoteLandmark landmark) {
         Glide.with(this).asBitmap()
-                .load(MainActivity.Companion.getImageBitmap())
+                .load(mBitmap)
                 .into((mImageView));
         progressBarSpin.setVisibility(View.INVISIBLE);
         progressBarTextView.setVisibility(View.INVISIBLE);

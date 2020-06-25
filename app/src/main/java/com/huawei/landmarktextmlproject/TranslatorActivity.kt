@@ -58,6 +58,7 @@ AdapterView.OnItemSelectedListener  {
                 // Processing logic for detection success.
             }.addOnFailureListener {
                 // Processing logic for detection failure.
+                println("mcmc error -> $it")
             }
         }
 

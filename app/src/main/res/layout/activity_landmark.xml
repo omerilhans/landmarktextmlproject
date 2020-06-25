@@ -93,8 +93,9 @@
         android:tint="#EC5F59"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/landmark_result"
-        app:layout_constraintEnd_toStartOf="@+id/translator_icon"
-        app:srcCompat="@drawable/expand_less" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/expand_less"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/expand_more_icon"
@@ -104,8 +105,9 @@
         android:alpha="1"
         android:tint="#EC5F59"
         android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/landmark_result"
-        app:layout_constraintEnd_toStartOf="@+id/translator_icon"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/expand_more" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == 100) {
             if (resultCode == Activity.RESULT_OK) { //  resim seçildiğinde yapılacaklar
-                val bitmapFromCamera = data?.extras!!["data"] as Bitmap?
+                val bitmapFromCamera = data?.extras?.get("data") as Bitmap?
                 val intentFromCamera = Intent(this, LandmarkRecognizationActivity::class.java)
                 imageBitmap = bitmapFromCamera
                 startActivity(intentFromCamera)

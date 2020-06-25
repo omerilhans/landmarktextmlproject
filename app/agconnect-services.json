@@ -1,0 +1,12 @@
+{
+	"client":{
+		"cp_id":"890090000023106264",
+		"product_id":"736430079244518785",
+		"client_id":"387191234138997760",
+		"client_secret":"DD4D8A89637B7CF132DA0A90114EC44E0E2C51A426A367765703E34CD1A02033",
+		"app_id":"102419813",
+		"package_name":"com.huawei.landmarktextmlproject",
+		"api_key":"CV8SFr0Dbkn/bE9vu0TnFBmjuuNDFJuHmfHN92imTwHWJKztz703JDrtY83NRQhWFuJQ0Z1k8glpxCRSoWk0NlrvOs0T"
+	},
+	"configuration_version":"1.0"
+}
